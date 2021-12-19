@@ -57,7 +57,9 @@ app.post("/sendmail", (req, res) => {
                 });
             }
             else {
+                //Print mail URL in console on success
                 console.log("URL :",nodemailer.getTestMessageUrl(info));
+                //response 
                 res.status(200).send({ 
                     success: true, 
                     message: "Mail sent successfully", 
