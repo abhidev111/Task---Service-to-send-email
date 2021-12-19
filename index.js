@@ -42,7 +42,7 @@ app.post("/sendmail", (req, res) => {
         });
         //data for the mail
         const mailData = {
-            from: 'foo@example.com',
+            from: 'itsme@example.com',
             to: to,
             subject: subject,
             text: emailBody
@@ -57,6 +57,7 @@ app.post("/sendmail", (req, res) => {
                 });
             }
             else {
+                console.log("URL :",nodemailer.getTestMessageUrl(info));
                 res.status(200).send({ 
                     success: true, 
                     message: "Mail sent successfully", 
